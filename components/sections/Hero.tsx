@@ -161,8 +161,19 @@ export function Hero() {
           </p>
 
           <div className="hero-buttons mt-8 flex w-full flex-col items-center justify-center gap-4 opacity-0 scale-95 will-change-transform sm:w-auto sm:flex-row lg:justify-start">
-            <MagneticButton className="w-full sm:w-auto">Get a Free Creative Audit</MagneticButton>
-            <MagneticButton variant="ghost" className="w-full sm:w-auto">See Our Results</MagneticButton>
+            <MagneticButton 
+              className="w-full sm:w-auto" 
+              onClick={() => window.location.href = '#contact'}
+            >
+              Get a Free Creative Audit
+            </MagneticButton>
+            <MagneticButton 
+              variant="ghost" 
+              className="w-full sm:w-auto" 
+              onClick={() => window.location.href = '#work'}
+            >
+              See Our Results
+            </MagneticButton>
           </div>
         </div>
 

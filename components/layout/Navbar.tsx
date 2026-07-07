@@ -15,7 +15,7 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-6 z-40 flex justify-center px-4 sm:px-6">
-      <nav className="flex w-full max-w-4xl items-center justify-between gap-4 rounded-full border border-white/10 bg-[#111111]/60 px-2 py-2 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+      <nav className="flex w-auto sm:w-full max-w-4xl items-center justify-between sm:gap-4 rounded-full border border-white/10 bg-[#111111]/60 px-2 py-2 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
         <ul className="hidden items-center gap-8 pl-6 sm:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
