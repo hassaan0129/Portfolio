@@ -19,7 +19,7 @@ export function SocialProof() {
     if (!sectionRef.current) return;
 
     if (prefersReducedMotion()) {
-      gsap.set(".stat-value", { innerText: (i, el) => el.dataset.value });
+      gsap.set(".stat-value", { innerText: (i: number, el: HTMLElement) => el.dataset.value });
       return;
     }
 
