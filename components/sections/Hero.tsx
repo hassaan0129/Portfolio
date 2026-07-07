@@ -140,7 +140,7 @@ export function Hero() {
 
       {/* Hero Content Column */}
       <div
-        className="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 sm:px-10 lg:flex-row lg:justify-between"
+        className="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pt-32 pb-16 sm:px-10 sm:pt-40 lg:flex-row lg:justify-between lg:py-0"
         style={{ visibility: loaded ? "visible" : "hidden" }}
       >
         <div className="max-w-3xl lg:w-3/5 xl:w-2/3">
@@ -173,7 +173,7 @@ export function Hero() {
       </div>
 
       {/* Client Logo Banner */}
-      <div className="hero-subtext absolute bottom-24 left-0 w-full px-6 opacity-0 will-change-[opacity] sm:px-10 lg:bottom-16">
+      <div className="hero-subtext relative mt-16 w-full px-6 opacity-0 will-change-[opacity] sm:px-10 lg:absolute lg:bottom-12 lg:left-0 lg:mt-0 lg:pb-0 pb-12">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-8 sm:gap-16 opacity-50 grayscale">
           <span className="text-sm font-semibold tracking-widest text-white/80">RIDGE</span>
           <span className="text-sm font-serif italic tracking-wider text-white/80">Glow Skincare</span>

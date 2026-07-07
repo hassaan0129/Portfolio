@@ -60,7 +60,7 @@ export function Navbar() {
           <a
             ref={ctaRef}
             href="#contact"
-            className="flex h-10 items-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-black transition-transform hover:scale-[1.03] shadow-[0_4px_14px_rgba(255,255,255,0.25)]"
+            className="flex h-10 items-center gap-1.5 rounded-full bg-white px-4 text-xs sm:px-6 sm:text-sm sm:gap-2 font-bold text-black transition-transform hover:scale-[1.03] shadow-[0_4px_14px_rgba(255,255,255,0.25)] whitespace-nowrap"
           >
             <span aria-hidden="true" className="text-[10px]">✦</span> Start a Project
           </a>
