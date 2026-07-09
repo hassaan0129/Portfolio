@@ -3,62 +3,33 @@ import type { WorkCategory } from "@/store/WorkStore";
 export interface Project {
   id: string;
   title: string;
-  client: string;
+  client?: string;
   category: Exclude<WorkCategory, "All">;
-  thumbnail: string;
-  videoPreview?: string;
-  metrics: string;
+  youtubeId: string;
+  isShort: boolean;
+  metrics?: string;
 }
 
 export const PROJECTS: Project[] = [
-  {
-    id: "p1",
-    title: "Glow Skincare — Hook Optimization",
-    client: "Glow Skincare",
-    category: "AI UGC Ads",
-    thumbnail: "/work/placeholder-1.jpg",
-    metrics: "Hook Rate: 52% | ROAS: 3.8x",
-  },
-  {
-    id: "p2",
-    title: "Nectar — Long-form Sales Letter",
-    client: "Nectar Supplements",
-    category: "VSL Editing",
-    thumbnail: "/work/placeholder-2.jpg",
-    metrics: "CPA: -$12.40 | LTV: +40%",
-  },
-  {
-    id: "p3",
-    title: "Nova Audio — Product Launch",
-    client: "Nova Audio",
-    category: "Motion Graphics",
-    thumbnail: "/work/placeholder-3.jpg",
-    metrics: "CTR: 4.1% | ROAS: 4.2x",
-  },
-  {
-    id: "p4",
-    title: "Ridge — AI Variant Testing",
-    client: "Ridge Apparel",
-    category: "AI UGC Ads",
-    thumbnail: "/work/placeholder-4.jpg",
-    metrics: "Hook Rate: 48% | CPA: -$8.50",
-  },
-  {
-    id: "p5",
-    title: "Flowstate SaaS — Offer Restructure",
-    client: "Flowstate SaaS",
-    category: "VSL Editing",
-    thumbnail: "/work/placeholder-5.jpg",
-    metrics: "Conversion: +2.4% | ROAS: 3.1x",
-  },
-  {
-    id: "p6",
-    title: "Peak — Brand Motion Identity",
-    client: "Peak Nutrition",
-    category: "Motion Graphics",
-    thumbnail: "/work/placeholder-6.jpg",
-    metrics: "CTR: 3.8% | Watch Time: 12s",
-  },
+  // AI Ads (3)
+  { id: "ai1", title: "AI Ad Creative", category: "AI Ads", youtubeId: "1GQ9WR2YNDc", isShort: true },
+  { id: "ai2", title: "AI Ad Variant", category: "AI Ads", youtubeId: "TLR7bKHRuGY", isShort: true },
+  { id: "ai3", title: "AI Performance Hook", category: "AI Ads", youtubeId: "XNERf0BlVDI", isShort: true },
+  
+  // UGC Ads (3)
+  { id: "ugc1", title: "UGC Hook Testing", category: "UGC Ads", youtubeId: "79ZKtpN_eJM", isShort: true },
+  { id: "ugc2", title: "UGC Storytelling", category: "UGC Ads", youtubeId: "7Y3P1_CUHvI", isShort: true },
+  { id: "ugc3", title: "UGC Product Demo", category: "UGC Ads", youtubeId: "Q62JO0NRItE", isShort: true },
+  
+  // VSL (2)
+  { id: "vsl1", title: "High-Converting VSL", category: "VSL", youtubeId: "CWduyNyX0VA", isShort: true },
+  { id: "vsl2", title: "Long-Form Sales Letter", category: "VSL", youtubeId: "XoWZDl_7sRs", isShort: true },
+  
+  // Motion Graphics (4)
+  { id: "mg1", title: "Kinetic Typography", category: "Motion Graphics", youtubeId: "fkMel8Z5BHI", isShort: true },
+  { id: "mg2", title: "Product Overlay", category: "Motion Graphics", youtubeId: "tYnAKzkivWM", isShort: true },
+  { id: "mg3", title: "Brand Motion Identity", category: "Motion Graphics", youtubeId: "IeVlxTVJ7mU", isShort: false },
+  { id: "mg4", title: "Seamless Transitions", category: "Motion Graphics", youtubeId: "mABEX08JX2A", isShort: true },
 ];
 
 export const SERVICES = [

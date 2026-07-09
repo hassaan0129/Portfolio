@@ -2,8 +2,9 @@ import { create } from "zustand";
 
 export const WORK_CATEGORIES = [
   "All",
-  "AI UGC Ads",
-  "VSL Editing",
+  "AI Ads",
+  "UGC Ads",
+  "VSL",
   "Motion Graphics",
 ] as const;
 

@@ -12,6 +12,7 @@ export function Work() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { activeCategory, setActiveCategory } = useWorkStore();
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [playingId, setPlayingId] = useState<string | null>(null);
 
   const visibleProjects =
     activeCategory === "All"
@@ -99,56 +100,74 @@ export function Work() {
               }
 
               return (
-                <button
+                <div
                   key={project.id}
+                  onClick={() => {
+                    if (playingId !== project.id) setPlayingId(project.id);
+                  }}
                   className={cn(
-                    "work-card group relative overflow-hidden rounded-2xl bg-[var(--bg-secondary)] text-left transition-all duration-500",
+                    "work-card group relative overflow-hidden rounded-2xl bg-[var(--bg-secondary)] text-left transition-all duration-500 cursor-pointer",
                     layoutClasses,
                     hoveredId && hoveredId !== project.id ? "scale-[0.98] opacity-40 blur-[2px] grayscale-[50%]" : "scale-100 opacity-100 blur-none grayscale-0"
                   )}
                   onMouseEnter={() => setHoveredId(project.id)}
                   onMouseLeave={() => setHoveredId(null)}
-                  aria-label={`View project: ${project.title}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Play video: ${project.title}`}
                 >
-                {/* Placeholder thumbnail - swap with next/image once real assets exist */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-white/5 to-black/40 transition-transform duration-700 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${project.thumbnail})`, backgroundSize: "cover" }}
-                />
-
-                {project.videoPreview && (
-                  <video
-                    className={cn(
-                      "absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500",
-                      hoveredId === project.id && "opacity-100"
-                    )}
-                    src={project.videoPreview}
-                    muted
-                    loop
-                    playsInline
-                    preload="none"
-                    autoPlay={hoveredId === project.id}
-                  />
-                )}
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-
-                <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col items-start">
-                  <p className="mb-1 text-xs uppercase tracking-widest text-white/50">
-                    {project.category}
-                  </p>
-                  <h3 className="mb-3 text-lg font-medium text-white">
-                    {project.title}
-                  </h3>
-                  
-                  {project.metrics && (
-                    <div className="inline-flex items-center gap-2 rounded-full border border-[var(--highlight)]/20 bg-[var(--highlight)]/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[var(--highlight)] backdrop-blur-sm">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--highlight)]" aria-hidden="true" />
-                      {project.metrics}
+                  {playingId === project.id ? (
+                    <div className="absolute inset-0 bg-black">
+                      <iframe
+                        className="w-full h-full"
+                        src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1&controls=1&rel=0&playsinline=1`}
+                        title={project.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
                     </div>
+                  ) : (
+                    <>
+                      {/* YouTube Thumbnail with fallback */}
+                      <div
+                        className="absolute inset-0 bg-[var(--bg-primary)] transition-transform duration-700 group-hover:scale-105"
+                        style={{ 
+                          backgroundImage: `url(https://img.youtube.com/vi/${project.youtubeId}/maxresdefault.jpg), url(https://img.youtube.com/vi/${project.youtubeId}/hqdefault.jpg)`, 
+                          backgroundSize: "cover",
+                          backgroundPosition: "center"
+                        }}
+                      />
+
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
+
+                      {/* Fake play icon overlay on hover */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8 ml-1 text-white">
+                            <path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"/>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col items-start pointer-events-none">
+                        <p className="mb-1 text-xs uppercase tracking-widest text-white/50">
+                          {project.category}
+                        </p>
+                        <h3 className="mb-3 text-lg font-medium text-white">
+                          {project.title}
+                        </h3>
+                        
+                        {project.metrics && (
+                          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--highlight)]/20 bg-[var(--highlight)]/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[var(--highlight)] backdrop-blur-sm">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[var(--highlight)]" aria-hidden="true" />
+                            {project.metrics}
+                          </div>
+                        )}
+                      </div>
+                    </>
                   )}
                 </div>
-              </button>
               );
             })}
           </div>
