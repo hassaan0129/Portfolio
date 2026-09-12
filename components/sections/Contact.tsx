@@ -71,7 +71,6 @@ export function Footer() {
         </p>
         <div className="flex flex-wrap justify-center gap-6 text-xs text-white/60">
           <a href="#work" className="transition-colors hover:text-white">View My Work</a>
-          <a href="#services" className="transition-colors hover:text-white">Services</a>
           <a href="#contact" className="transition-colors hover:text-white">Get in Touch</a>
           <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">LinkedIn</a>
           <a href={`mailto:${SITE.email}`} className="transition-colors hover:text-white">Email</a>

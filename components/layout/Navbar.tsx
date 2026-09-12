@@ -7,9 +7,7 @@ import { SITE } from "@/constants/site";
 
 const NAV_LINKS = [
   { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "Trial", href: "#process" },
-  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
