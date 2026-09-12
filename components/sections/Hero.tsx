@@ -10,12 +10,12 @@ const HERO_CARDS = [
   {
     label: "Creative formats",
     value: "AI UGC, VSLs, motion",
-    position: "lg:absolute lg:right-[4%] lg:top-[16%] lg:rotate-[4deg]",
+    position: "lg:absolute lg:right-[4%] lg:top-[22%] lg:rotate-[4deg]",
   },
   {
     label: "White-label delivery",
     value: "Confidential, agency-ready production",
-    position: "lg:absolute lg:right-[6%] lg:top-[58%] lg:-rotate-[3deg]",
+    position: "lg:absolute lg:right-[6%] lg:top-[56%] lg:-rotate-[3deg]",
   },
 ];
 
@@ -150,7 +150,10 @@ export function Hero() {
   }, [loaded]);
 
   return (
-    <section ref={sectionRef} className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-[var(--bg-primary)] pb-24 pt-32 lg:pb-48 lg:pt-36">
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-[100dvh] flex-col justify-between overflow-hidden bg-[var(--bg-primary)] pt-32 pb-8 sm:pt-36 sm:pb-12 lg:pt-40"
+    >
       {!loaded && (
         <div className="absolute inset-0 z-50 flex items-center justify-center bg-[var(--bg-primary)]">
           <span className="font-mono text-sm tracking-[0.3em] text-white/70">
@@ -163,24 +166,25 @@ export function Hero() {
       <VolumetricLight className="hero-shape opacity-0" />
 
       <div
-        className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-6 sm:px-10 lg:flex-row lg:items-center lg:justify-between"
+        className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 sm:px-10"
         style={{ visibility: loaded ? "visible" : "hidden" }}
       >
-        <div className="flex max-w-3xl flex-col items-center text-center lg:w-3/5 lg:items-start lg:text-left xl:w-2/3">
+        <div className="flex max-w-3xl flex-col items-center text-center lg:items-start lg:text-left xl:max-w-4xl">
           <span className="hero-badge mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--highlight)]/30 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--highlight)] opacity-0 will-change-transform sm:text-xs">
             <span aria-hidden="true">*</span>
             VIDEO AD CREATIVE FOR AGENCIES
           </span>
 
           <h1 ref={headlineRef} className="text-hero pb-4 font-serif text-white">
-            Performance Ad Creatives for Agencies That Need More
-            <br />
+            Performance Ad Creatives for Agencies
+            <br className="hidden md:inline" />
+            {" "}That Need More{" "}
             <span ref={kineticTextRef} className="cursor-default text-[var(--highlight)] italic transition-colors">
               Production Capacity
             </span>
           </h1>
 
-          <p className="hero-subtext text-body mt-5 max-w-lg opacity-0 will-change-[opacity]">
+          <p className="hero-subtext text-body mt-4 max-w-lg opacity-0 will-change-[opacity]">
             I help performance marketing agencies produce AI UGC ads, VSLs, motion graphics, and creative variations without you hiring another full-time editor.
           </p>
 
@@ -212,24 +216,29 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero-subtext relative mt-16 w-full px-6 opacity-0 will-change-[opacity] sm:px-10 lg:absolute lg:bottom-12 lg:left-0 lg:mt-0 lg:pb-0">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-4 text-center sm:gap-6 lg:justify-start">
-          {HERO_CAPABILITIES.map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-      </div>
-
       <div
-        ref={scrollIndicatorRef}
-        className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 text-[10px] font-medium uppercase tracking-[0.3em] text-white/55 opacity-0 will-change-transform lg:block"
+        className="hero-subtext relative z-10 mt-10 w-full px-6 opacity-0 will-change-[opacity] sm:px-10 lg:mt-12"
+        style={{ visibility: loaded ? "visible" : "hidden" }}
       >
-        Scroll
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 lg:justify-start">
+            {HERO_CAPABILITIES.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60 backdrop-blur-sm sm:px-4 sm:py-2"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div
+            ref={scrollIndicatorRef}
+            className="hidden items-center gap-2 text-[10px] font-medium uppercase tracking-[0.3em] text-white/55 opacity-0 will-change-transform lg:flex"
+          >
+            Scroll
+          </div>
+        </div>
       </div>
     </section>
   );
