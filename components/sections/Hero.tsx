@@ -13,8 +13,8 @@ const HERO_CARDS = [
     position: "lg:absolute lg:right-[4%] lg:top-[16%] lg:rotate-[4deg]",
   },
   {
-    label: "Agency workflow",
-    value: "White-label production support",
+    label: "White-label delivery",
+    value: "Confidential, agency-ready production",
     position: "lg:absolute lg:right-[6%] lg:top-[58%] lg:-rotate-[3deg]",
   },
 ];
@@ -169,7 +169,7 @@ export function Hero() {
         <div className="flex max-w-3xl flex-col items-center text-center lg:w-3/5 lg:items-start lg:text-left xl:w-2/3">
           <span className="hero-badge mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--highlight)]/30 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--highlight)] opacity-0 will-change-transform sm:text-xs">
             <span aria-hidden="true">*</span>
-            WHITE-LABEL CREATIVE PRODUCTION
+            VIDEO AD CREATIVE FOR AGENCIES
           </span>
 
           <h1 ref={headlineRef} className="text-hero pb-4 font-serif text-white">
@@ -181,7 +181,7 @@ export function Hero() {
           </h1>
 
           <p className="hero-subtext text-body mt-5 max-w-lg opacity-0 will-change-[opacity]">
-            AGENz helps performance marketing agencies produce AI UGC ads, VSLs, motion graphics, and creative variations without hiring another full-time editor.
+            I help performance marketing agencies produce AI UGC ads, VSLs, motion graphics, and creative variations without you hiring another full-time editor.
           </p>
 
           <div className="hero-buttons mt-8 flex w-full scale-95 flex-col items-center justify-center gap-4 opacity-0 will-change-transform sm:w-auto sm:flex-row lg:justify-start">
@@ -189,7 +189,7 @@ export function Hero() {
               Start a Paid Trial
             </MagneticButton>
             <MagneticButton variant="ghost" className="w-full sm:w-auto" href="#work">
-              View Our Work
+              View My Work
             </MagneticButton>
           </div>
         </div>
@@ -227,7 +227,7 @@ export function Hero() {
 
       <div
         ref={scrollIndicatorRef}
-        className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 text-[10px] font-medium uppercase tracking-[0.3em] text-white/40 opacity-0 will-change-transform lg:block"
+        className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 text-[10px] font-medium uppercase tracking-[0.3em] text-white/55 opacity-0 will-change-transform lg:block"
       >
         Scroll
       </div>

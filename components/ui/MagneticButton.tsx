@@ -4,7 +4,9 @@ import { useMagnetic } from "@/hooks/useMagnetic";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface MagneticButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    Pick<React.AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "rel"> {
   variant?: "primary" | "ghost";
   href?: string;
 }
@@ -14,12 +16,14 @@ export function MagneticButton({
   className,
   variant = "primary",
   href,
+  target,
+  rel,
   ...props
 }: MagneticButtonProps) {
   const ref = useMagnetic<HTMLElement>(0.35);
 
   const baseClasses = cn(
-    "relative inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 ease-[var(--ease-premium)] hover:scale-[1.03] hover:shadow-[0_8px_24px_rgba(255,255,255,0.08)]",
+    "relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 ease-[var(--ease-premium)] hover:scale-[1.03] hover:shadow-[0_8px_24px_rgba(255,255,255,0.08)]",
     variant === "primary"
       ? "bg-white text-black hover:bg-[#e5e5e5]"
       : "border border-white/20 text-white hover:border-white/50",
@@ -28,10 +32,12 @@ export function MagneticButton({
 
   if (href) {
     return (
-      <Link 
-        href={href} 
-        ref={ref as React.Ref<HTMLAnchorElement>} 
+      <Link
+        href={href}
+        ref={ref as React.Ref<HTMLAnchorElement>}
         className={baseClasses}
+        target={target}
+        rel={rel}
       >
         {children}
       </Link>

@@ -5,6 +5,7 @@ import { DM_Serif_Display } from "next/font/google";
 import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { SITE } from "@/constants/site";
 import "./globals.css";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -14,14 +15,12 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "AGENz Productions | White-Label Ad Creative Production",
-  description:
-    "AI UGC ads, VSL editing, motion graphics, and AI creative production for performance marketing agencies.",
-  metadataBase: new URL("https://agenz.agency"),
+  title: SITE.title,
+  description: SITE.description,
+  metadataBase: new URL(SITE.url),
   openGraph: {
-    title: "AGENz Productions | White-Label Ad Creative Production",
-    description:
-      "AI UGC ads, VSL editing, motion graphics, and AI creative production for performance marketing agencies.",
+    title: SITE.title,
+    description: SITE.description,
     type: "website",
   },
 };

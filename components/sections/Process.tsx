@@ -52,7 +52,7 @@ export function Process() {
           Start With a Low-Risk Creative Trial
         </h2>
         <p className="text-body mx-auto mb-10 max-w-2xl text-center">
-          Test our workflow with one focused ad project before committing to ongoing production.
+          Test my workflow with one focused ad project before committing to ongoing production.
         </p>
 
         <Reveal selector=".trial-item">

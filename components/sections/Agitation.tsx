@@ -17,7 +17,7 @@ export function Agitation() {
             Your creative queue should not slow down testing.
           </h2>
           <p className="agitation-content text-body mx-auto max-w-2xl text-lg sm:text-xl">
-            Agencies need more ad variations, sharper hooks, and reliable editing capacity without adding full-time production overhead. AGENz supports your team with confidential creative production built around the brief, the offer, and the platform.
+            Agencies need more ad variations, sharper hooks, and reliable editing capacity without adding full-time production overhead. I support your team with confidential creative production built around the brief, the offer, and the platform.
           </p>
         </Reveal>
       </div>

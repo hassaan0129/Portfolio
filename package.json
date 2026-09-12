@@ -1,7 +1,8 @@
 {
-  "name": "axiom-edits",
+  "name": "hamza-mudassir-portfolio",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +10,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.4.0",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "clsx": "^2.1.1",
@@ -21,11 +21,9 @@
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "react-hook-form": "^7.81.0",
     "split-type": "^0.3.4",
     "tailwind-merge": "^3.6.0",
     "three": "^0.185.1",
-    "zod": "^4.4.3",
     "zustand": "^5.0.14"
   },
   "devDependencies": {

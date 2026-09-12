@@ -27,7 +27,7 @@ export function SocialProof() {
                 Built Through Real Agency Production Experience
               </h2>
               <p className="text-body max-w-2xl">
-                Our portfolio includes AI UGC ads, VSLs, motion graphics, and performance creatives produced during previous agency work. Brand identities and campaign details are kept confidential.
+                My portfolio includes AI UGC ads, VSLs, motion graphics, and performance creatives produced for clients. Brand identities and campaign details are kept confidential.
               </p>
             </div>
 

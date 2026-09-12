@@ -36,22 +36,22 @@ export function About() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-2">
         <Reveal selector=".about-line">
           <p className="about-line mb-4 text-xs uppercase tracking-[0.35em] text-white/50">
-            The team
+            About
           </p>
           <h2
             id="about-heading"
             className="about-line mb-8 text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl"
           >
-            A focused production team for agency creative output.
+            Video ad creative for performance marketing agencies.
           </h2>
           <p className="about-line text-body max-w-md">
-            AGENz is a focused creative production team helping performance agencies deliver more ad creatives without expanding their internal editing team.
+            I&apos;m Hamza Mudassir, a video ad creative helping performance and marketing agencies produce more ad creatives without expanding their internal editing team.
           </p>
           <p className="about-line text-body mt-4 max-w-md">
-            Hassaan manages client communication, creative planning, and project coordination. Rehan leads editing and production.
+            I handle the edit end to end: hooks, pacing, captions, sound design, and platform-ready formatting for AI UGC ads, VSLs, and motion graphics.
           </p>
           <p className="about-line text-body mt-4 max-w-md">
-            Our experience comes from producing real ad creatives within an agency environment. We are now bringing that production experience directly to selected agency partners.
+            My experience comes from producing real ad creatives within an agency environment, and I now bring that production experience directly to selected agency partners.
           </p>
         </Reveal>
 

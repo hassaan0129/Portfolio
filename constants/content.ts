@@ -203,11 +203,11 @@ export const SERVICES = [
 export const PROCESS_STEPS = [
   {
     label: "Brief the Trial",
-    description: "Share the offer, audience, references, and placement so we can define one focused creative project.",
+    description: "Share the offer, audience, references, and placement so I can define one focused creative project.",
   },
   {
     label: "Produce the Asset",
-    description: "We develop the edit, hooks, captions, sound design, and platform-ready format for agency review.",
+    description: "I develop the edit, hooks, captions, sound design, and platform-ready format for agency review.",
   },
   {
     label: "Review and Decide",

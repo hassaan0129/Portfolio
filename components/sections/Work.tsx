@@ -41,10 +41,10 @@ export function Work() {
               id="work-heading"
               className="text-4xl font-semibold tracking-tight text-white sm:text-5xl"
             >
-              Selected agency production work.
+              Selected ad creative work.
             </h2>
             <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/50">
-              Selected work produced during previous agency experience. Brand names and campaign details are withheld for confidentiality.
+              A selection of ad creatives I&apos;ve produced for clients. Brand names and campaign details are withheld for confidentiality.
             </p>
           </div>
 

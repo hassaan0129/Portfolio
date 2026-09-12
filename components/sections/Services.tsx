@@ -23,7 +23,7 @@ export function Services() {
     >
       <div className="mx-auto max-w-6xl">
         <p className="mb-4 text-xs uppercase tracking-[0.35em] text-[var(--highlight)]">
-          Agency Production Services
+          Services
         </p>
         <h2
           id="services-heading"
@@ -51,8 +51,8 @@ export function Services() {
           </div>
         </Reveal>
 
-        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-white/45">
-          AGENz focuses on creative production, editing, scripting, and white-label delivery. Media buying and ad account management are not included unless separately agreed for a specific project.
+        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-white/60">
+          I focus on creative production, editing, scripting, and white-label delivery. Media buying and ad account management are not included unless separately agreed for a specific project.
         </p>
       </div>
     </section>

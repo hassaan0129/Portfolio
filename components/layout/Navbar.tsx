@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useMagnetic } from "@/hooks/useMagnetic";
+import { SITE } from "@/constants/site";
 
 const NAV_LINKS = [
   { label: "Work", href: "#work" },
@@ -55,7 +56,7 @@ export function Navbar() {
 
           <div className="ml-auto flex items-center gap-2">
             <a
-              href="https://www.linkedin.com/in/agenz-productions-166733363/"
+              href={SITE.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Connect on LinkedIn"
