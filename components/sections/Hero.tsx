@@ -150,7 +150,7 @@ export function Hero() {
   }, [loaded]);
 
   return (
-    <section ref={sectionRef} className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-[var(--bg-primary)] pb-24 pt-32 lg:pb-0 lg:pt-0">
+    <section ref={sectionRef} className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-[var(--bg-primary)] pb-24 pt-32 lg:pb-48 lg:pt-36">
       {!loaded && (
         <div className="absolute inset-0 z-50 flex items-center justify-center bg-[var(--bg-primary)]">
           <span className="font-mono text-sm tracking-[0.3em] text-white/70">
